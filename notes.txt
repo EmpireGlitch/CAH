@@ -1,1 +1,2 @@
+node i -g lessc
 npm install -g less-watch-compiler
