@@ -6,20 +6,22 @@
     <!-- 1. Load libraries -->
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
 
-    <!-- Router -->
-    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <!-- For OAuth -->
+    <script src="node_modules/angular2-jwt/angular2-jwt.js"></script>
+    <!-- Auth0 Lock script -->
+    <script src="//cdn.auth0.com/js/lock-8.2.min.js"></script>
+    <!-- Setting the right viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
-        packages: {
-          build: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
+        defaultJSExtensions: true,
+        map: {
+          "angular2-jwt": "node_modules/angular2-jwt/angular2-jwt",
+          "angular2": "node_modules/angular2",
+          "rxjs": "node_modules/rxjs"
         }
       });
       System.import('build/boot')
