@@ -6,7 +6,7 @@ import { RegisterComponent } from './RegisterComponent/register.component';
 
 @Component({
     selector: 'my-app',
-    template: '<router-outlet></router-outlet>',
+    template: `<router-outlet></router-outlet>`,
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([

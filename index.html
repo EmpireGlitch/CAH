@@ -35,12 +35,14 @@
       System.import('build/boot')
             .then(null, console.error.bind(console));
     </script>
-
+    <link rel="stylesheet" href="build/css/style.css" />
   </head>
   <base href="/">
   <!-- 3. Display the application -->
   <body>
-    <my-app>Loading...</my-app>
+    <h1>spinner</h1>
+    <paper-spinner active></paper-spinner>
+    <my-app></my-app>
   </body>
 
 </html>

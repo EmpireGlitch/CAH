@@ -21,10 +21,24 @@ export class RegisterComponent {
 
 @Component({
   template: `
-    <h1>Auth0</h1>
-    <paper-input label="This is polymer input"></paper-input>
-    <button *ngIf="!loggedIn()" (click)="login()">Login</button>
-    <button *ngIf="loggedIn()" (click)="logout()">Logout</button>
+    <h1 class="outside">Login</h1>
+    <div class="content-wrap">
+    <paper-menu-button>
+  <paper-icon-button icon="menu" class="dropdown-trigger"></paper-icon-button>
+  <paper-menu class="dropdown-content">
+    <paper-item>Share</paper-item>
+    <paper-item>Settings</paper-item>
+    <paper-item>Help</paper-item>
+  </paper-menu>
+</paper-menu-button>
+    <paper-menu>
+        <paper-item>Item 1</paper-item>
+        <paper-item>Item 2</paper-item>
+      </paper-menu>
+      <paper-button *ngIf="!loggedIn()" class="loggin-button" (click)="login()">Login</paper-button>
+      <paper-button *ngIf="loggedIn()" class="loggin-button" (click)="logout()">Logout</paper-button>
+      <paper-spinner active></paper-spinner>
+    </div>
   `
 })
 
