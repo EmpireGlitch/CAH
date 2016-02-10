@@ -21,7 +21,8 @@ export class RegisterComponent {
 
 @Component({
   template: `
-    <h1>Welcome to Angular2 with Auth0</h1>
+    <h1>Auth0</h1>
+    <paper-input label="This is polymer input"></paper-input>
     <button *ngIf="!loggedIn()" (click)="login()">Login</button>
     <button *ngIf="loggedIn()" (click)="logout()">Logout</button>
   `
