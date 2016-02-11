@@ -8,7 +8,6 @@ import { JoinGameComponent } from './JoinGameComponent/join-game.component';
 
 @Component({
   template: `
-  <h4>Game/Home Route</h4>
   <router-outlet></router-outlet>`,
   directives: [RouterOutlet]
 })

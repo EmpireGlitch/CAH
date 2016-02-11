@@ -1,4 +1,5 @@
 @color1: rgb(255, 82, 82);
+@menu-button-color: #2C3963;
 
 *{
   font-family: 'Roboto', sans-serif;
@@ -11,8 +12,14 @@
   left:10px;
 }
 
+paper-button{
+  border-radius: 0;
+}
+
 .content-wrap{
   position: absolute;
+  padding:0;
+  margin:0;
   top: 0;
   right: 0;
   bottom: 0;
@@ -23,7 +30,23 @@
 
 .loggin-button{
   background: @color1;
-  position: relative;;
+  position: relative;
+  margin: auto;
+  max-width: 500px;
+  width: 100%;
+  height: 80px;
+  font-size: 40px;
+  line-height: 20px;
+}
+
+.center{
+  position: relative;
+  margin: auto;
+}
+
+.menu-button{
+  background: @menu-button-color;
+  position: relative;
   margin: auto;
   max-width: 500px;
   width: 100%;

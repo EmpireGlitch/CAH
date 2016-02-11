@@ -2,10 +2,13 @@ import { Component } from 'angular2/core';
 import { Router } from 'angular2/router';
 @Component({
   template: `
-    <h1>Home menu</h1>
-    <button (click)=create()>Create Game</button>
-    <button (click)=join()>Join Game</button>
-    <button (click)=settings()>Settings</button>
+    <div class="content-wrap layout vertical">
+      <h1 class="outside">Home menu</h1>
+      <paper-icon-button icon="arrow-back"></paper-icon-button>
+      <paper-button (click)=create() class="menu-button">Create Game</paper-button>
+      <paper-button (click)=join() class="menu-button">Join Game</paper-button>
+      <paper-button (click)=settings() class="menu-button">Settings</paper-button>
+    </div>
   `
 })
 export class HomeMenuComponent {

@@ -21,6 +21,11 @@
     <!-- Use an HTML Import to bring in some elements. -->
     <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <link rel="import" href="bower_components/paper-spinner/paper-spinner.html">
+    <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link href="bower_components/iron-icons/iron-icons.html" rel="import">
+
 
     <!-- 2. Configure SystemJS -->
     <script>
@@ -40,9 +45,11 @@
   <base href="/">
   <!-- 3. Display the application -->
   <body>
-    <h1>spinner</h1>
-    <paper-spinner active></paper-spinner>
-    <my-app></my-app>
+    <my-app>
+      <div class="content-wrap layout vertical">
+        <paper-spinner active class="layout center"></paper-spinner>
+      </div>
+    </my-app>
   </body>
 
 </html>
