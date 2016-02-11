@@ -1,14 +1,14 @@
 <html>
 
   <head>
-    <title>Angular 2 QuickStart</title>
+    <title>Redgal</title>
 
     <!-- 1. Load libraries -->
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>
 
     <!-- For OAuth -->
-    <script src="node_modules/angular2-jwt/angular2-jwt.js"></script>
+    <script src="/node_modules/angular2-jwt/angular2-jwt.js"></script>
     <!-- Auth0 Lock script -->
     <script src="//cdn.auth0.com/js/lock-8.2.min.js"></script>
     <!-- Setting the right viewport -->
@@ -33,12 +33,12 @@
       System.config({
         defaultJSExtensions: true,
         map: {
-          "angular2-jwt": "node_modules/angular2-jwt/angular2-jwt",
-          "angular2": "node_modules/angular2",
-          "rxjs": "node_modules/rxjs"
+          "angular2-jwt": "/node_modules/angular2-jwt/angular2-jwt",
+          "angular2": "/node_modules/angular2",
+          "rxjs": "/node_modules/rxjs"
         }
       });
-      System.import('build/boot')
+      System.import('/build/boot')
             .then(null, console.error.bind(console));
     </script>
     <link rel="stylesheet" href="/build/css/style.css" />

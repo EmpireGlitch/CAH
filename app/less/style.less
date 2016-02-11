@@ -39,6 +39,18 @@ paper-button{
   line-height: 20px;
 }
 
+.center-horizontal{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-vertical{
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .center{
   position: relative;
   margin: auto;
@@ -63,7 +75,17 @@ paper-button{
 
 .player-lobby-card{
   max-width: @max-width;
+  display: block;
   width: 100%;
-  height: 80px;
+  min-height: 80px;
   margin-bottom: 10px;
+  border-radius: 0;
+}
+
+.player-lobby-card p{
+  margin:0;
+}
+
+.player-lobby-card paper-icon-button{
+  float: right;
 }

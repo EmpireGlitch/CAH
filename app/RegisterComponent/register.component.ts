@@ -23,8 +23,8 @@ export class RegisterComponent {
   template: `
     <h1 class="outside">Login</h1>
     <div class="content-wrap layout vertical">
-      <paper-button *ngIf="!loggedIn()" class="loggin-button layout center" (click)="login()">Login</paper-button>
-      <paper-button *ngIf="loggedIn()" class="loggin-button layout center" (click)="logout()">Logout</paper-button>
+      <paper-button *ngIf="!loggedIn()" class="loggin-button center-horizontal" (click)="login()">Login</paper-button>
+      <paper-button *ngIf="loggedIn()" class="loggin-button layout center-horizontal" (click)="logout()">Logout</paper-button>
     </div>
   `
 })
