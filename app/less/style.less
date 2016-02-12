@@ -1,6 +1,6 @@
 @color1: rgb(255, 82, 82);
-@menu-button-color: #2C3963;
-@max-width: 500px;
+@button-color-1: #2C3963;
+@max-menu-width: 500px;
 *{
   font-family: 'Roboto', sans-serif;
 }
@@ -14,29 +14,6 @@
 
 paper-button{
   border-radius: 0;
-}
-
-.content-wrap{
-  position: absolute;
-  padding:0;
-  margin:0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.loggin-button{
-  background: @color1;
-  position: relative;
-  margin: auto;
-  max-width: @max-width;
-  width: 100%;
-  height: 80px;
-  font-size: 40px;
-  line-height: 20px;
 }
 
 .center-horizontal{
@@ -56,11 +33,52 @@ paper-button{
   margin: auto;
 }
 
-.menu-button{
-  background: @menu-button-color;
+.content-wrap{
+  position: absolute;
+  padding:0;
+  margin:0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-wrap{
+  position: relative;
+  max-width: @max-menu-width;
+  height: 100%;
+
+}
+
+.loggin-button{
+  background: @color1;
   position: relative;
   margin: auto;
-  max-width: @max-width;
+  width: 100%;
+  height: 80px;
+  font-size: 40px;
+  line-height: 20px;
+}
+
+
+
+.menu-button{
+  background: @button-color-1;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: 80px;
+  font-size: 40px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.settings-button{
+  background: @button-color-1;
+  position: relative;
+  margin: auto;
   width: 100%;
   height: 80px;
   font-size: 40px;
@@ -69,23 +87,40 @@ paper-button{
 }
 
 .game-label{
-  max-width: @max-width;
-  mergin: auto 10px
+  width: 100%;
+  mergin: auto 10px;
+}
+
+.forward-icon{
+  float: right;;
 }
 
 .player-lobby-card{
-  max-width: @max-width;
-  display: block;
   width: 100%;
+  display: block;
   min-height: 80px;
   margin-bottom: 10px;
   border-radius: 0;
 }
 
 .player-lobby-card p{
-  margin:0;
+
+}
+
+.player-lobby-card *{
+  float: left;
 }
 
 .player-lobby-card paper-icon-button{
   float: right;
+}
+
+.avatar, .avatar-small{
+  
+}
+
+.avatar-small{
+  background: red;
+  width: 50px;
+  height: 50px;
 }
