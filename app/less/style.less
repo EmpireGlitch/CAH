@@ -52,6 +52,10 @@ paper-button{
 
 }
 
+.menu-wrap *{
+  //margin-bottom: 20px;
+}
+
 .loggin-button{
   background: @color1;
   position: relative;
@@ -86,6 +90,32 @@ paper-button{
   margin-bottom: 20px;
 }
 
+.settings-card{
+  position: relative;
+  margin: auto;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.settings-card .card-content *{
+  float:left;
+}
+
+.settings-card .card-content .avatar-small{
+  margin-right:16px;
+}
+
+.settings-card .card-content p{
+  margin:0;
+}
+
+.settings-card .card-content:after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+}
+
 .game-label{
   width: 100%;
   mergin: auto 10px;
@@ -116,11 +146,42 @@ paper-button{
 }
 
 .avatar, .avatar-small{
-  
+  border-radius: 50%;
+  border: none;
+}
+
+.avatar{
+  background: red;
+  width: 75px;
+  height: 75px;
 }
 
 .avatar-small{
   background: red;
   width: 50px;
   height: 50px;
+}
+
+.user-data{
+
+}
+
+.user-data *{
+  float: left
+}
+
+.user-data img{
+  margin:0;
+  margin-right: 16px;
+}
+
+.user-data p{
+  margin:0;
+}
+
+.user-data::after{
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
 }

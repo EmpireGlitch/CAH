@@ -8,14 +8,14 @@ import { Component } from 'angular2/core';
 
       <paper-card class="player-lobby-card center-horizontal">
         <div class="card-content">
-          <img class="avatar small" src="">
+          <img class="avatar-small" src="">
           <p>John Doe</p>
           <paper-icon-button icon="more-vert"></paper-icon-button>
         </div>
       </paper-card>
 
       <paper-material class="player-lobby-card center-horizontal">
-          <img class="avatar-small" src="" class="avatart-small center-vertical">
+          <img src="" class="avatar-small center-vertical">
           <p class="center-vertical">John Doe</p>
           <paper-icon-button icon="more-vert"></paper-icon-button>
       </paper-material>
