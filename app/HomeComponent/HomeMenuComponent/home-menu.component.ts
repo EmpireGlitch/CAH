@@ -5,8 +5,7 @@ import { Router } from 'angular2/router';
     <div class="content-wrap layout vertical">
       <h1 class="outside">Home menu</h1>
       <div class="menu-wrap center">
-        <paper-icon-button icon="arrow-back"></paper-icon-button>
-        <div calss="user-data">
+        <div class="user-data">
           <img class="avatar" src="">
           <p>
             John Doe<br>

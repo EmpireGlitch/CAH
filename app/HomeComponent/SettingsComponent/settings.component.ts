@@ -9,18 +9,26 @@ import { logoutService } from '../../services/logout.service';
         <paper-icon-button icon="arrow-back"></paper-icon-button>
         <paper-card class="settings-card">
         <div class="card-content">
-        <img class="avatar-small" src="">
-        <p>
-        John Doe<br>
-        username
-        </p>
+          <img class="avatar-small" src="">
+          <p>
+            John Doe<br>
+            username
+          </p>
         </div>
         <div class="card-actions">
           <paper-button (click)="logout()">Logout</paper-button>
           </div>
         </paper-card>
-        <paper-button class="settings-button layout center">Theme</paper-button>
-        <paper-button class="settings-button layout center">Language</paper-button>
+        <paper-material class="settings-card">
+          <img class="avatar-small" src="">
+          <p>
+            John Doe<br>
+            username
+          </p>
+          <paper-button (click)="logout()" class="settings-button right">Logout</paper-button>
+        </paper-material>
+        <paper-button (click)="theme()" class="settings-button layout center">Theme</paper-button>
+        <paper-button (click)="language()" class="settings-button layout center">Language</paper-button>
       </div>
     </div>
   `
@@ -30,8 +38,18 @@ export class SettingsComponent {
     private _logoutService:logoutService,
     private _router:Router
   ) { }
+
   logout(){
+    console.debug('Settings, logout')
     this._logoutService.logout()
     this._router.navigate(['/Register'])
+  }
+
+  theme(){
+    console.debug('Settings, theme')
+  }
+
+  language(){
+    console.debug('Settings, language')
   }
 }
