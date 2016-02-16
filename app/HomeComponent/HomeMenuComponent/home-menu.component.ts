@@ -1,5 +1,6 @@
 import { Component } from 'angular2/core';
-import { Router } from 'angular2/router';
+import { Router, CanActivate } from 'angular2/router';
+import { tokenNotExpired } from 'angular2-jwt';
 @Component({
   template: `
     <div class="content-wrap layout vertical">
@@ -19,6 +20,8 @@ import { Router } from 'angular2/router';
     </div>
   `
 })
+@CanActivate(()=>tokenNotExpired())
+
 export class HomeMenuComponent {
   constructor(
       private _router: Router

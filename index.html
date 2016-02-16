@@ -2,6 +2,13 @@
 
   <head>
     <title>Redgal</title>
+    <!-- Load webcomponents-lite.min.js for polyfill support. -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!--Fix for everyone who is not supporting Shadow DOM natively yet-->
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
 
     <!-- 1. Load libraries -->
     <script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
@@ -15,9 +22,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 
-    <!-- Load webcomponents-lite.min.js for polyfill support. -->
-    <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js">
-    </script>
+
+
     <!-- Use an HTML Import to bring in some elements. -->
     <link rel="import" href="/bower_components/paper-button/paper-button.html">
     <link rel="import" href="/bower_components/paper-input/paper-input.html">
