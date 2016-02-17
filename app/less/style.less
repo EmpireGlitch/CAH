@@ -8,9 +8,10 @@
 
 .outside{
   position: fixed;
-  color: gray;
+  color: rgba(255,255,255,0.1);
   top:10px;
   left:10px;
+  z-index: 	5000;
 }
 
 .right{
@@ -161,8 +162,12 @@ paper-button{
   float: left;
 }
 
-.player-lobby-card paper-icon-button{
+.player-lobby-card paper-menu-button {
   float: right;
+}
+
+.player-lobby-card paper-item{
+  float: none;
 }
 
 .avatar, .avatar-small{

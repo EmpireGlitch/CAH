@@ -7,18 +7,6 @@ import { logoutService } from '../../services/logout.service';
     <div class="content-wrap layout vertical">
       <div class="menu-wrap center">
         <paper-icon-button icon="arrow-back"></paper-icon-button>
-        <paper-card class="settings-card">
-        <div class="card-content">
-          <img class="avatar-small" src="">
-          <p>
-            John Doe<br>
-            username
-          </p>
-        </div>
-        <div class="card-actions">
-          <paper-button (click)="logout()">Logout</paper-button>
-          </div>
-        </paper-card>
         <paper-material class="settings-card">
           <img class="avatar-small" src="">
           <p>
