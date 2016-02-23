@@ -23,8 +23,13 @@ export class RegisterComponent {
   template: `
     <h1 class="outside">Login</h1>
     <div class="content-wrap layout vertical">
-      <paper-button *ngIf="!loggedIn()" class="loggin-button center-horizontal" (click)="login()">Login</paper-button>
-      <paper-button *ngIf="loggedIn()" class="loggin-button layout center-horizontal" (click)="logout()">Logout</paper-button>
+      <div class="menu-wrap center">
+        <h1 id="login-label" class="center-horizontal">Sign in</h1>
+        <paper-button id="login-google-button" class="login-button" (click)="googleLogin()">Google+</paper-button>
+        <paper-button id="login-facebook-button" class="login-button" (click)="facebookLogin()">facebook</paper-button>
+        <paper-button *ngIf="!loggedIn()" class="login-button center-horizontal" (click)="login()">Legacy Login</paper-button>
+        <paper-button *ngIf="loggedIn()" class="login-button layout center-horizontal" (click)="logout()">Legacy Logout</paper-button>
+      </div>
     </div>
   `
 })
@@ -37,6 +42,15 @@ export class RegisterComponent {
   constructor(
     private _router: Router
   ) { }
+
+  googleLogin(){
+    console.debug('attempt Google+ login');
+  }
+
+  facebookLogin(){
+    console.debug('attempt facebook login');
+
+  }
 
   login() {
     let self = this;
