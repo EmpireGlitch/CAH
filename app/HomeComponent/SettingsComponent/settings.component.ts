@@ -1,6 +1,6 @@
 import { Component } from 'angular2/core';
 import { Router } from 'angular2/router';
-import { logoutService } from '../../services/logout.service';
+import { accountService } from '../../services/account.service';
 @Component({
   template: `
     <h1 class="outside">Settings Component</h1>
@@ -38,12 +38,12 @@ import { logoutService } from '../../services/logout.service';
 })
 export class SettingsComponent {
   constructor(
-    private _logoutService:logoutService,
+    private _accountService:accountService,
     private _router:Router
   ) { }
 
   logout(){
-    this._logoutService.logout();
+    this._accountService.logout();
     this._router.navigate(['/Register']);
   }
 

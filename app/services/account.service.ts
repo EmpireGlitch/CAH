@@ -1,4 +1,4 @@
-export class logoutService{
+export class accountService{
   public logout() {
     localStorage.removeItem('profile');
     localStorage.removeItem('id_token');
