@@ -3,7 +3,7 @@
   <head>
     <title>Redgal</title>
     <!-- Load webcomponents-lite.min.js for polyfill support. -->
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <!--Fix for everyone who is not supporting Shadow DOM natively yet-->
     <script>
       window.Polymer = window.Polymer || {};
@@ -11,6 +11,7 @@
     </script>
 
     <!-- 1. Load libraries -->
+    <script src="/node_modules/angular2/bundles/angular2.js"></script>
     <script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="/node_modules/systemjs/dist/system.src.js"></script>
 

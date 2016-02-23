@@ -48,10 +48,6 @@ export class RegisterComponent {
 
       localStorage.setItem('profile', JSON.stringify(profile));
       localStorage.setItem('id_token', id_token);
-
-      console.log(
-
-      )
       self.loggedIn();
       self._router.navigate(['Home']);
     });
