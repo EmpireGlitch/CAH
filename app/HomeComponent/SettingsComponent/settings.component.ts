@@ -6,7 +6,7 @@ import { logoutService } from '../../services/logout.service';
     <h1 class="outside">Settings Component</h1>
     <div class="content-wrap layout vertical">
       <div class="menu-wrap center">
-        <paper-icon-button icon="arrow-back"></paper-icon-button>
+        <paper-icon-button (click)="back()" icon="arrow-back"></paper-icon-button>
         <paper-material class="settings-card">
           <img class="avatar-small" src="">
           <p>
@@ -15,8 +15,23 @@ import { logoutService } from '../../services/logout.service';
           </p>
           <paper-button (click)="logout()" class="settings-button right">Logout</paper-button>
         </paper-material>
-        <paper-button (click)="theme()" class="settings-button layout center">Theme</paper-button>
-        <paper-button (click)="language()" class="settings-button layout center">Language</paper-button>
+        <paper-material class="settings-card">
+            <paper-dropdown-menu label="Language">
+            <paper-menu class="dropdown-content" selected="0">
+              <paper-item>English</paper-item>
+              <paper-item>Latvian</paper-item>
+              <paper-item>German</paper-item>
+            </paper-menu>
+          </paper-dropdown-menu>
+          <div class="seperator"></div>
+          <paper-dropdown-menu label="Theme">
+          <paper-menu class="dropdown-content" selected="0">
+            <paper-item>Light</paper-item>
+            <paper-item>Blue</paper-item>
+            <paper-item>Dark</paper-item>
+          </paper-menu>
+        </paper-dropdown-menu>
+        </paper-material>
       </div>
     </div>
   `
@@ -28,16 +43,23 @@ export class SettingsComponent {
   ) { }
 
   logout(){
-    console.debug('Settings, logout')
-    this._logoutService.logout()
-    this._router.navigate(['/Register'])
+    this._logoutService.logout();
+    this._router.navigate(['/Register']);
   }
 
-  theme(){
-    console.debug('Settings, theme')
+  back(){
+    console.debug('going back')
+    window.history.back();
   }
 
-  language(){
-    console.debug('Settings, language')
+  getThemes(){
+    console.debug('gathering themes');
+    //Access DB for themes
+    //Create array with themes
+    //Get current theme, select current in list
+  }
+  setTheme(id){
+    console.debug('set theme number:',id);
+    //Save theme to settings in DB
   }
 }
