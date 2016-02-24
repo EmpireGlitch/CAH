@@ -1,24 +1,7 @@
 import { Component } from 'angular2/core';
 import { PlayerCardComponent } from './player-card.component';
 @Component({
-  template:`
-    <h1 class="outside">CreateGame</h1>
-    <div class="menu-wrap center">
-      <paper-icon-button icon="arrow-back"></paper-icon-button>
-      <div class='game-label-wrap'>
-      <paper-input label="Game name" #gameLabel focused=true class="game-label center-horizontal left"></paper-input>
-      <paper-icon-button (click)="submitGameLabel(gameLabel)" icon='done' class='right' ></paper-icon-button>
-      </div>
-      <div class="player-list" [hidden] = "!submited">
-      Dubug info
-      <div *ngFor="#player of players">
-        <player-card [player]="player"></player-card>
-      </div>
-      </div>
-      <paper-icon-button icon="arrow-forward" class="forward-icon"></paper-icon-button>
-      <paper-toast #toast id="toast" text=""></paper-toast>
-    </div>
-  `,
+  templateUrl:'app/HomeComponent/CreateGameComponent/create-game.component.html',
   directives: [PlayerCardComponent]
 })
 
