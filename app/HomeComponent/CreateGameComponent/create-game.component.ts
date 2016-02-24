@@ -12,19 +12,7 @@ export class CreateGameComponent {
                   name: 'John Doe',
                   username: 'John Doe',
                   imageUrl: ''};
-  debugStart(){
-   var one: Player = {id:1,
-                   name: 'Gorge Hammond',
-                   username: 'Gorge Hammond',
-                   imageUrl: ''};
-   var two: Player = {id:2,
-                  name: 'Peter Smith',
-                  username: 'Peter Smith',
-                  imageUrl: ''};
-  // this.addPlayer(one);
-//   this.addPlayer(two);
 
-  }
   public submited: boolean = false;
   submitGameLabel(field){
     field.disabled = true;
@@ -40,30 +28,9 @@ export class CreateGameComponent {
   }
 
   public players: Player[]=[this.me,this.me,this.me];
-  /*
-  addPlayer(newPlayer : Player){
-    this.players.push(newPlayer);
-    //Generate dom element
-    var list = document.getElementById('player-list');
-    var card = `<paper-material class="player-lobby-card center-horizontal" id="`+newPlayer.username+`">
-        <img src="`+newPlayer.imageUrl+`" class="avatar-small center-vertical">
-        <p class="center-vertical">`+newPlayer.username+`</p>
-        <paper-menu-button>
-          <paper-icon-button icon="more-vert" class="dropdown-trigger"></paper-icon-button>
-          <paper-menu varticalAlign='top' class="dropdown-content layout vertical">
-            <paper-item (click)="kick('`+newPlayer.username+`',toast)">Kick</paper-item>
-            <paper-item #item (click)="ban(`+newPlayer.username+`,toast)">Ban</paper-item>
-          </paper-menu>
-        </paper-menu-button>
-    </paper-material>
-    `
-    angular.element(list).append(card);
-    // list.appendChild(card);
-  }
 
-  getPlayers (){
-    console.debug(this.players);
-  }
+  /*
+  addPlayer(newPlayer : Player){}
 */
   // for now 'name' later on use player ID for identification
   removePlayer(name){
@@ -78,6 +45,11 @@ export class CreateGameComponent {
     toast.open();
     this.removePlayer(name);
     return true;
+  }
+
+  onKick(eventObj){
+    console.log("kick Event");
+    console.log(JSON.stringify(eventObj.username));
   }
 
   ban(name,toast){

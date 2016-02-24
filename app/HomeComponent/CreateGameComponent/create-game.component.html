@@ -7,7 +7,7 @@
   </div>
   <div class="player-list" [hidden] = "!submited">
   <div *ngFor="#player of players">
-    <player-card [player]="player"></player-card>
+    <player-card [player]="player" (^kick)="onKick($event)"></player-card>
   </div>
   </div>
   <paper-icon-button icon="arrow-forward" class="forward-icon"></paper-icon-button>
