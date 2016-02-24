@@ -2,14 +2,21 @@
 <div class="menu-wrap center">
   <paper-icon-button icon="arrow-back"></paper-icon-button>
   <div class='game-label-wrap'>
-  <paper-input label="Game name" #gameLabel focused=true class="game-label center-horizontal left"></paper-input>
+  <paper-input label="Game name" #gameLabel focused=true [disabled]="submited" class="game-label center-horizontal left"></paper-input>
   <paper-icon-button (click)="submitGameLabel(gameLabel)" icon='done' class='right' ></paper-icon-button>
   </div>
+<<<<<<< HEAD
   <div class="player-list" [hidden] = "!submited">
   <div *ngFor="#player of players">
     <player-card [player]="player" (^kick)="onKick($event)"></player-card>
+=======
+  <div class="player-list" *ngIf="submited">
+    <host-card [me]="me"></host-card>
+    <div *ngFor="#player of players">
+      <player-card [player]="player"></player-card>
+    </div>
+>>>>>>> 92e0fd28284dfc57f62c849b3aa7c9bcde16de10
   </div>
-  </div>
-  <paper-icon-button icon="arrow-forward" class="forward-icon"></paper-icon-button>
+  <paper-icon-button icon="arrow-forward" [hidden] = "!submited" class="forward-icon"></paper-icon-button>
   <paper-toast #toast id="toast" text=""></paper-toast>
 </div>
