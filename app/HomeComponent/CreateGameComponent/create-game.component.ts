@@ -1,30 +1,30 @@
 import { Component } from 'angular2/core';
 import { PlayerCardComponent } from './player-card.component';
+import { HostCardComponent } from './host-card.component';
 @Component({
   templateUrl:'app/HomeComponent/CreateGameComponent/create-game.component.html',
-  directives: [PlayerCardComponent]
+  directives: [PlayerCardComponent,HostCardComponent]
 })
 
 
 export class CreateGameComponent {
-  constructor() { }
+  constructor() {
+
+  }
   public me: Player = {id:1,
                   name: 'John Doe',
                   username: 'John Doe',
                   imageUrl: ''};
-  debugStart(){
-   var one: Player = {id:1,
-                   name: 'Gorge Hammond',
-                   username: 'Gorge Hammond',
-                   imageUrl: ''};
-   var two: Player = {id:2,
+  public one: Player = {id:2,
+                  name: 'Gorge Hammond',
+                  username: 'Gorge Hammond',
+                  imageUrl: ''};
+  public two: Player = {id:3,
                   name: 'Peter Smith',
                   username: 'Peter Smith',
                   imageUrl: ''};
-  // this.addPlayer(one);
-//   this.addPlayer(two);
 
-  }
+
   public submited: boolean = false;
   submitGameLabel(field){
     field.disabled = true;
@@ -38,8 +38,7 @@ export class CreateGameComponent {
     // generate dom element
 
   }
-
-  public players: Player[]=[this.me,this.me,this.me];
+  public players: Player[]=[this.one,this.two];
   /*
   addPlayer(newPlayer : Player){
     this.players.push(newPlayer);

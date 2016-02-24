@@ -5,11 +5,12 @@
   <paper-input label="Game name" #gameLabel focused=true class="game-label center-horizontal left"></paper-input>
   <paper-icon-button (click)="submitGameLabel(gameLabel)" icon='done' class='right' ></paper-icon-button>
   </div>
-  <div class="player-list" [hidden] = "!submited">
-  <div *ngFor="#player of players">
-    <player-card [player]="player"></player-card>
+  <div class="player-list" *ngIf="submited">
+    <host-card [me]="me"></host-card>
+    <div *ngFor="#player of players">
+      <player-card [player]="player"></player-card>
+    </div>
   </div>
-  </div>
-  <paper-icon-button icon="arrow-forward" class="forward-icon"></paper-icon-button>
+  <paper-icon-button icon="arrow-forward" [hidden] = "!submited" class="forward-icon"></paper-icon-button>
   <paper-toast #toast id="toast" text=""></paper-toast>
 </div>
