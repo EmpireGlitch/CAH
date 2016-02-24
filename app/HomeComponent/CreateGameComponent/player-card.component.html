@@ -1,0 +1,12 @@
+<paper-material class="player-lobby-card center-horizontal" [id]="player.username">
+    <img [src]="player.imageUrl" class="avatar-small center-vertical">
+    <p class="center-vertical">{{player.username}}</p>
+    <paper-menu-button>
+      <paper-icon-button icon="more-vert" class="dropdown-trigger"></paper-icon-button>
+      <paper-menu varticalAlign='top' class="dropdown-content layout vertical">
+        <paper-item (click)="kick( player.username, toast)">Kick</paper-item>
+        <paper-item #item (click)="ban( player.username, toast)">Ban</paper-item>
+      </paper-menu>
+    </paper-menu-button>
+</paper-material>
+<paper-toast #toast id="toast" text=""></paper-toast>

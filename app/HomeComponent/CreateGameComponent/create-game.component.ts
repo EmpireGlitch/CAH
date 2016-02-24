@@ -1,4 +1,5 @@
 import { Component } from 'angular2/core';
+import { PlayerCardComponent } from './player-card.component';
 @Component({
   template:`
     <h1 class="outside">CreateGame</h1>
@@ -8,32 +9,17 @@ import { Component } from 'angular2/core';
       <paper-input label="Game name" #gameLabel focused=true class="game-label center-horizontal left"></paper-input>
       <paper-icon-button (click)="submitGameLabel(gameLabel)" icon='done' class='right' ></paper-icon-button>
       </div>
-      <div class="player-list" id="player-list">
-        <paper-card class="player-lobby-card center-horizontal">
-          <div class="card-content">
-            <img class="avatar-small" src="">
-            <p>John Doe</p>
-            <paper-icon-button icon="more-vert"></paper-icon-button>
-          </div>
-        </paper-card>
-
-        <paper-material class="player-lobby-card center-horizontal" id="John Doe">
-            <img src="" class="avatar-small center-vertical">
-            <p class="center-vertical">John Doe</p>
-            <paper-menu-button>
-              <paper-icon-button icon="more-vert" class="dropdown-trigger"></paper-icon-button>
-              <paper-menu varticalAlign='top' class="dropdown-content layout vertical">
-                <paper-item (click)="kick('John Doe',toast)">Kick</paper-item>
-                <paper-item #item (click)="ban('John Doe',toast)">Ban</paper-item>
-              </paper-menu>
-            </paper-menu-button>
-        </paper-material>
-
+      <div class="player-list" [hidden] = "!submited">
+      Dubug info
+      <div *ngFor="#player of players">
+        <player-card [player]="player"></player-card>
+      </div>
       </div>
       <paper-icon-button icon="arrow-forward" class="forward-icon"></paper-icon-button>
       <paper-toast #toast id="toast" text=""></paper-toast>
     </div>
-  `
+  `,
+  directives: [PlayerCardComponent]
 })
 
 
@@ -52,15 +38,17 @@ export class CreateGameComponent {
                   name: 'Peter Smith',
                   username: 'Peter Smith',
                   imageUrl: ''};
-   this.addPlayer(one);
-   this.addPlayer(two);
+  // this.addPlayer(one);
+//   this.addPlayer(two);
 
   }
+  public submited: boolean = false;
   submitGameLabel(field){
     field.disabled = true;
-    this.addSelf();
-    this.debugStart();
-    this.getPlayers();
+    this.submited = true;
+  //  this.addSelf();
+  //  this.debugStart();
+  //  this.getPlayers();
   }
   addSelf(){
     this.players.push(this.me);
@@ -68,7 +56,8 @@ export class CreateGameComponent {
 
   }
 
-  public players: Player[]=[];
+  public players: Player[]=[this.me,this.me,this.me];
+  /*
   addPlayer(newPlayer : Player){
     this.players.push(newPlayer);
     //Generate dom element
@@ -92,7 +81,7 @@ export class CreateGameComponent {
   getPlayers (){
     console.debug(this.players);
   }
-
+*/
   // for now 'name' later on use player ID for identification
   removePlayer(name){
     var card = document.getElementById(name);
@@ -116,6 +105,9 @@ export class CreateGameComponent {
     return true;
   }
 
+  get list(){
+    return JSON.stringify(this.players);
+  }
 }
 
 export interface Player{
