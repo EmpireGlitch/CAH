@@ -3,6 +3,12 @@ import { Router } from 'angular2/router';
 import { accountService } from '../../services/account.service';
 @Component({
   templateUrl:'app/HomeComponent/SettingsComponent/settings.component.html',
+  styles: ['label{background: red;}']
+  // styles: [`
+  //     	label{
+  //         background: red;
+  //       }
+  //   `]
 
 })
 export class SettingsComponent {
