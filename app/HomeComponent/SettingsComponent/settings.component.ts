@@ -1,15 +1,11 @@
 import { Component } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { accountService } from '../../services/account.service';
+import { InterfaceHeaderComponent } from '../../GlobalComponents/interface-header.component';
+
 @Component({
   templateUrl:'app/HomeComponent/SettingsComponent/settings.component.html',
-  styles: ['label{background: red;}']
-  // styles: [`
-  //     	label{
-  //         background: red;
-  //       }
-  //   `]
-
+  directives: [InterfaceHeaderComponent]
 })
 export class SettingsComponent {
   constructor(
@@ -21,12 +17,6 @@ export class SettingsComponent {
     this._accountService.logout();
     this._router.navigate(['/Register']);
   }
-
-  back(){
-    console.debug('going back')
-    window.history.back();
-  }
-
   getThemes(){
     console.debug('gathering themes');
     //Access DB for themes

@@ -1,9 +1,11 @@
 import { Component } from 'angular2/core';
 import { PlayerCardComponent } from './player-card.component';
 import { HostCardComponent } from './host-card.component';
+import { InterfaceHeaderComponent } from '../../GlobalComponents/interface-header.component';
+
 @Component({
   templateUrl:'app/HomeComponent/CreateGameComponent/create-game.component.html',
-  directives: [PlayerCardComponent,HostCardComponent]
+  directives: [PlayerCardComponent, HostCardComponent, InterfaceHeaderComponent]
 })
 
 export class CreateGameComponent {
@@ -27,7 +29,7 @@ export class CreateGameComponent {
     });
   }
   onBan(event, toast){
-    this.players.forEach((player, i)=>{
+    this.players.forEach((player, i) => {
       if(player.id === event.id){
         this.players.splice(i, 1);
         this.banList.push(this.convertToBanned(player));
