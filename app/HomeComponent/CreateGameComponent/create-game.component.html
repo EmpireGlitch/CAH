@@ -7,8 +7,9 @@
   </div>
   <div class="player-list" *ngIf="submited">
     <host-card [me]="me"></host-card>
-      <player-card *ngFor="#player of players" [player]="player" (^kick)="onKick($event)"></player-card>
+      <player-card *ngFor="#player of players" [player]="player" (kick)="onKick($event, toast)" (ban)="onBan($event, toast)"></player-card>
   </div>
   <paper-icon-button icon="arrow-forward" [hidden] = "!submited" class="forward-icon"></paper-icon-button>
   <paper-toast #toast id="toast" text=""></paper-toast>
 </div>
+{{bans}}
