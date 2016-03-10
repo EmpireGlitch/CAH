@@ -1,8 +1,9 @@
-import { Component } from 'angular2/core';
+import { Component, ViewChild } from 'angular2/core';
 import { PlayerCardComponent } from './player-card.component';
 import { HostCardComponent } from './host-card.component';
 import { InterfaceHeaderComponent } from '../../GlobalComponents/interface-header.component';
 import { accountService } from '../../services/account.service';
+
 
 @Component({
   templateUrl:'app/HomeComponent/CreateGameComponent/create-game.component.html',
@@ -11,6 +12,11 @@ import { accountService } from '../../services/account.service';
 
 export class CreateGameComponent {
   constructor(public account: accountService) { }
+  @ViewChild('gameLabel') gameNameInput;
+
+  ngAfterViewInit() {
+    this.gameNameInput.nativeElement.focus();
+  }
 
   public banList: BannedPlayer[] = [];
   public me: Player = {
