@@ -2,6 +2,7 @@ import { Component } from 'angular2/core';
 import { PlayerCardComponent } from './player-card.component';
 import { HostCardComponent } from './host-card.component';
 import { InterfaceHeaderComponent } from '../../GlobalComponents/interface-header.component';
+import { accountService } from '../../services/account.service';
 
 @Component({
   templateUrl:'app/HomeComponent/CreateGameComponent/create-game.component.html',
@@ -9,9 +10,15 @@ import { InterfaceHeaderComponent } from '../../GlobalComponents/interface-heade
 })
 
 export class CreateGameComponent {
-  constructor() { }
+  constructor(public account: accountService) { }
+
   public banList: BannedPlayer[] = [];
-  public me: Player = MOCKME;
+  public me: Player = {
+                  id:1,
+                  name: this.account.profile.name,
+                  username: this.account.profile.name,
+                  imageUrl: this.account.profile.picture
+  };
   public players: Player[] = MOCKPLAYERS;
   public submited: boolean = false;
 
@@ -54,12 +61,6 @@ export class CreateGameComponent {
     return JSON.stringify(this.banList);
   }
 }
-export var MOCKME: Player = {
-                id:1,
-                name: 'John Doe',
-                username: 'John Doe',
-                imageUrl: ''
-};
 export var MOCKPLAYERS: Player[] = [
   {id:2, name: 'George Hammond', username: 'George Hammond', imageUrl: ''},
   {id:3, name: 'Jenny Frey', username: 'Zebiegste', imageUrl: ''},

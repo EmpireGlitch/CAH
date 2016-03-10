@@ -11,7 +11,9 @@ export class SettingsComponent {
   constructor(
     private _accountService:accountService,
     private _router:Router
-  ) { }
+  ){
+    console.log(_accountService.profile);
+  }
 
   logout(){
     this._accountService.logout();
@@ -27,4 +29,5 @@ export class SettingsComponent {
     console.debug('set theme number:',id);
     //Save theme to settings in DB
   }
+
 }

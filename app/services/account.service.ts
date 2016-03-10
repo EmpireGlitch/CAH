@@ -3,4 +3,5 @@ export class accountService{
     localStorage.removeItem('profile');
     localStorage.removeItem('id_token');
   }
+  public profile = JSON.parse(localStorage.getItem('profile'));
 }

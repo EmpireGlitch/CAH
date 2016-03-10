@@ -2,10 +2,9 @@
   <h1 class="outside">Home menu</h1>
   <div class="menu-wrap center">
     <div class="user-data">
-      <img class="avatar" src="">
+      <img class="avatar" [src]="accountService.profile.picture">
       <p>
-        John Doe<br>
-        username
+        {{accountService.profile.name}}
       </p>
     </div>
     <paper-button (click)=create() class="menu-button">Create Game</paper-button>

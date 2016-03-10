@@ -3,10 +3,9 @@
 <div class="layout vertical">
   <div class="menu-wrap center">
     <paper-material class="settings-card">
-      <img class="avatar-small" src="">
+      <img class="avatar-small" [src]="_accountService.profile.picture">
       <p>
-        John Doe<br>
-        username
+        {{_accountService.profile.name}}
       </p>
       <paper-button (click)="logout()" class="settings-button right">Logout</paper-button>
     </paper-material>
