@@ -25,6 +25,25 @@
         <paper-item>Dark</paper-item>
       </paper-menu>
     </paper-dropdown-menu>
+
     </paper-material>
+    <paper-button (click)="language.toggle()">Theme dialog</paper-button>
+    <!-- <paper-dialog id='language' #language entry-animation="scale-up-animation" exit-animation="fade-out-animation" role="dialog"> -->
+    <paper-dialog id='language' #language role="dialog">
+      <h2>Theme</h2>
+      <paper-listbox dialog-confirm selected='0'>
+        <paper-item dialog-confirm>Light</paper-item>
+        <paper-item dialog-confirm>Blue</paper-item>
+        <paper-item dialog-confirm>Dark</paper-item>
+      </paper-listbox>
+      <!-- <paper-button dialog-confirm class="setting-choice selected">Light</paper-button>
+      <paper-button dialog-confirm class="setting-choice">Dark</paper-button>
+      <paper-button dialog-confirm class="setting-choice">Blue</paper-button> -->
+    </paper-dialog>
+
   </div>
 </div>
+<script>
+var lang = document.getElementById('language');
+console.debug(lang);
+</script>
