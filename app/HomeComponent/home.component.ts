@@ -5,6 +5,7 @@ import { CreateGameComponent } from './CreateGameComponent/create-game.component
 import { HomeMenuComponent } from './HomeMenuComponent/home-menu.component';
 import { SettingsComponent } from './SettingsComponent/settings.component';
 import { JoinGameComponent } from './JoinGameComponent/join-game.component';
+import { GamePlayComponent } from '../GamePlayComponent/gameplay.component';
 
 @Component({
   template: `
@@ -16,7 +17,8 @@ import { JoinGameComponent } from './JoinGameComponent/join-game.component';
   { path:'/',         name: 'HomeMenu',   component: HomeMenuComponent, useAsDefault: true},
   { path:'/create',   name: 'CreateGame', component: CreateGameComponent},
   { path:'/join',     name: 'JoinGame',   component: JoinGameComponent},
-  { path:'/settings', name: 'Settings',   component: SettingsComponent}
+  { path:'/settings', name: 'Settings',   component: SettingsComponent},
+  { path:'/gameplay', name: 'Gameplay',   component: GamePlayComponent}
 ])
 
 export class HomeComponent {
