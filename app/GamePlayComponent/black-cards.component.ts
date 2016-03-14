@@ -32,14 +32,6 @@ export class BlackCardsComponent implements OnInit{
     })
     this.blackcards = blackcards;
   }
-  // public blackys: BlackCard[] = [
-  //  {text: "Hey", selected: false},
-  //  {text: "Hey", selected: false},
-  //  {text: "Hey", selected: false},
-  //  {text: "Hey", selected: false},
-  //  {text: "Hey", selected: false},
-  //  {text: "Hey", selected: false},
-  // ]
 }
 
 export interface BlackCard{
