@@ -8,5 +8,4 @@ import { Component, Input } from 'angular2/core';
 })
 export class CardComponent {
   constructor() { }
-  //@Input() text: string;
 }

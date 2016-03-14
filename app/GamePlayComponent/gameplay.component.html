@@ -1,2 +1,2 @@
-<card class="white-card">{{whitecard}}</card>
-<black-cards [blackcards]="blackcards"></black-cards>
+<card class="white-card">{{whitecard.text}}</card>
+<black-cards [cards]="blackcards" [free_spaces]="whitecard.spaces"></black-cards>
