@@ -3,7 +3,7 @@
 <div class="menu-wrap center">
   <div class='game-label-wrap'>
   <paper-input #gameLabel (keyup.enter)="submitGameLabel(gameLabel)" label="Game name" focused=true [disabled]="submited" class="game-label center-horizontal left"></paper-input>
-  <paper-icon-button  (click)="gameLabel.focus()" icon='done' class='right'></paper-icon-button>
+  <paper-icon-button  (click)="submitGameLabel(gameLabel)" icon='done' class='right'></paper-icon-button>
   </div>
   <div class="player-list" *ngIf="submited">
     <host-card [me]="me"></host-card>
