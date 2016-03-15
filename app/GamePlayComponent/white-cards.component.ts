@@ -2,39 +2,39 @@ import { Component, Input, OnInit } from 'angular2/core';
 import { CardComponent } from './card.component';
 
 @Component({
-  selector: 'black-cards',
-  templateUrl: 'app/GamePlayComponent/black-cards.component.html',
+  selector: 'white-cards',
+  templateUrl: 'app/GamePlayComponent/white-cards.component.html',
   directives: [CardComponent]
 })
-export class BlackCardsComponent implements OnInit{
+export class WhiteCardsComponent implements OnInit{
   @Input() cards: string[];
   @Input() free_spaces: number;
 
   constructor(){}
 
   ngOnInit() {
-    this.mapBlackCards(this.cards);
-    console.log(JSON.stringify(this.blackcards))
+    this.mapWhiteCards(this.cards);
+    console.log(JSON.stringify(this.whitecards))
   }
 
-  public blackcards: BlackCard[];
+  public whitecards: WhiteCard[];
   public selected_cards: string[];
 
   public selectCard(card: any){
 
   }
-  public mapBlackCards(cards: string[]): void{
-     let blackcards: BlackCard[] = this.cards.map((text)=>{
+  public mapWhiteCards(cards: string[]): void{
+     let whitecards: WhiteCard[] = this.cards.map((text)=>{
       return {
         text: text,
         selected: false
       }
     })
-    this.blackcards = blackcards;
+    this.whitecards = whitecards;
   }
 }
 
-export interface BlackCard{
+export interface WhiteCard{
   text: string;
   selected: boolean;
 }

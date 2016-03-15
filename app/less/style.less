@@ -279,22 +279,27 @@ paper-button{
 //******GAMEPLAY COMPONENT******//
 //******************************//
 
-.white-card paper-material{
-   max-width: 150px;
-   height: 200px;
-   padding: 20px;
-}
-.black-card{
+.white-card{
   paper-material{
     width: 150px;
     height: 200px;
     padding: 20px;
-    background-color: black;
-    color: white;
-    border: 1px solid white;
+    background-color: white;
+    border: 1px solid black;
     float: left;
     &:hover{
       background-color: red;
     }
+  }
+}
+.black-card{
+  paper-material{
+   width: 150px;
+   height: 200px;
+   padding: 20px;
+   background: black;
+   color:white;
+   display: block;
+   float: left;
   }
 }
