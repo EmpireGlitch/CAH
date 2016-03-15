@@ -27,26 +27,33 @@
     </paper-dropdown-menu>
 
     </paper-material> -->
-    <paper-listbox id="settings">
-      <paper-item><paper-button (click)="languageDialog.toggle()">Language</paper-button></paper-item>
-      <paper-item><paper-button (click)="themeDialog.toggle()">Theme</paper-button></paper-item>
-      <paper-item><p class="left">Notifcations</p><paper-toggle-button class="right"></paper-toggle-button></paper-item>
-      <paper-item>Sound<paper-toggle-button></paper-toggle-button></paper-item>
-      <paper-item>Vibration<paper-toggle-button></paper-toggle-button></paper-item>
-    </paper-listbox>
-
-    <paper-dialog #languageDialog  class="settings-dialog" entry-animation="fade-in-animation" exit-animation="fade-out-animation" role="dialog">
+    <paper-material>
+      <ul class="settings-list">
+        <li><paper-button (click)="languageDialog.toggle()">Language</paper-button></li>
+        <li><paper-button (click)="themeDialog.toggle()">Theme</paper-button></li>
+      </ul>
+    </paper-material>
+    <paper-material>
+      <ul class="settings-list">
+        <li><p class="left">Notifcations</p><paper-toggle-button class="right"></paper-toggle-button></li>
+        <li><p class="left">Sound</p><paper-toggle-button class="right"></paper-toggle-button></li>
+        <li><p class="left">Vibration</p><paper-toggle-button class="right"></paper-toggle-button></li>
+      </ul>
+    </paper-material>
+    <paper-dialog #languageDialog  class="settings-dialog" with-backdrop="true" role="dialog"
+    entry-animation="scale-up-animation" exit-animation="scale-down-animation" >
     <!-- <paper-dialog id='language' #language class="settings-dialog" role="dialog"> -->
       <h2>Laguage</h2>
-      <paper-listbox modal selected='0'>
-        <paper-item dialog-confirm>English</paper-item>
+      <paper-listbox selected='0'>
+        <paper-item dialog-confirm><paper-button dialog-confirm>English</paper-button></paper-item>
         <paper-item dialog-confirm>Latvian</paper-item>
         <paper-item dialog-confirm>German</paper-item>
-
       </paper-listbox>
+      <paper-button dialog-confirm>English</paper-button>
     </paper-dialog>
 
-    <paper-dialog  #themeDialog class="settings-dialog" entry-animation="slide-from-bottom-animation" exit-animation="ripple-animation" role="dialog">
+    <paper-dialog  #themeDialog class="settings-dialog" role="dialog" with-backdrop="true"
+    entry-animation="fade-in-animation" exit-animation="fade-out-animation" >
     <!-- <paper-dialog id='language' #language class="settings-dialog" role="dialog"> -->
       <h2>Theme</h2>
       <paper-listbox modal selected='0'>
@@ -60,7 +67,3 @@
 
   </div>
 </div>
-<script>
-var lang = document.getElementById('language');
-console.debug(lang);
-</script>
