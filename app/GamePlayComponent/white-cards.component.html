@@ -1,2 +1,4 @@
 <!-- <card class="selected-card" *ngFor="#s of selected_cards">{{s}}</card> -->
-<card *ngFor="#card of whitecards" class="white-card">{{card.text}}</card>
+<div class="white-cards-wrapper">
+  <card *ngFor="#card of cards" class="white-card">{{card}}</card>
+</div>

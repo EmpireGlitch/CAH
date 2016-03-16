@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from 'angular2/core';
+import { Observable } from 'rxjs/Observable';
+
+
 import { CardComponent } from './card.component';
 
 @Component({
@@ -7,10 +10,10 @@ import { CardComponent } from './card.component';
   directives: [CardComponent]
 })
 export class WhiteCardsComponent implements OnInit{
+
+
   @Input() cards: string[];
   @Input() free_spaces: number;
-
-  constructor(){}
 
   ngOnInit() {
     this.mapWhiteCards(this.cards);
