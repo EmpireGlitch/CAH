@@ -159,17 +159,69 @@ paper-button{
    clear: both;
 }
 
---paper-dialog{
-  background: red;
-}
-
-
 .settings-dialog{
   max-width: 100%;
   width: 100%;
 }
+
+.settings-list{
+  list-style-type: none;
+  padding: 0;
+
+  paper-button{
+    width: 100%;
+    text-align: left;
+    height: 51px;
+
+  }
+
+  li{
+    clear:both;
+    float: none;
+    position: relative;
+    height: 51px;
+    >*:first-child{
+      padding-left: 20px;
+    }
+    >*:last-child{
+      padding-right: 20px;
+    }
+    paper-toggle-button{
+      position: absolute;
+      top:0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    paper-button{
+      margin:0;
+    }
+
+  }
+
+  li:after{
+    visibility: hidden;
+  	display: block;
+  	font-size: 0;
+  	content: " ";
+  	clear: both;
+  	height: 0;
+  }
+
+}
+
+.settings-list li:after{
+
+}
+
+.settings-list li{
+
+}
+
 .settings-card paper-dropdown-menu{
   width: 100%;
+
+
 
   /deep/ label{
     font-size: 23px !important;
